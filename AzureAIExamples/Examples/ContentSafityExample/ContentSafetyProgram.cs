@@ -23,12 +23,12 @@ public class ContentSafetyProgram : IContentSafetyProgram
         // --------------------
         // BLOCKLIST SETUP
         // --------------------
-        //AddBlocklistItems();
+        AddBlocklistItems();
 
         // --------------------
         // TEXT MODERATION
         // --------------------
-        //await TextModerationExampleWithBlocklistAsync();
+        await TextModerationExampleWithBlocklistAsync();
 
         // --------------------
         // IMAGE MODERATION
