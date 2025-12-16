@@ -53,3 +53,4 @@ CodeCoverage/
 TestResult.xml
 nunit-*.xml
 /AzureAIExamples/appsettings.local.json
+/.vs
