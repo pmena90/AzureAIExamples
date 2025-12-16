@@ -94,8 +94,11 @@ public class ContentSafetyProgram : IContentSafetyProgram
 
     private async Task ImageModerationExampleAsync()
     {
-        var imageUrl = new Uri("https://www.insst.es/documents/d/portal-insst/violencia-en-el-trabajo-min");
-        var imageData = new ContentSafetyImageData(imageUrl);
+        // Image example with potential sexual content
+        var imageUrl = new Uri("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvxyX0DyUsMc0ALV0iOirutLj70PE0-e0_nw&s");
+        var imageContent = BinaryData.FromStream(await new HttpClient().GetStreamAsync(imageUrl));
+
+        var imageData = new ContentSafetyImageData(imageContent);
 
         var imageRequest = new AnalyzeImageOptions(imageData);
 
