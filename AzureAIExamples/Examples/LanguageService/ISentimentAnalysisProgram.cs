@@ -1,6 +1,6 @@
 ﻿namespace AzureAIExamples.Examples.LanguageService
 {
-    public interface ILanguageDetectionProgram : IExampleProgram
+    public interface ISentimentAnalysisProgram : IExampleProgram
     {
     }
 }

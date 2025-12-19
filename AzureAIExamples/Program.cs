@@ -1,4 +1,5 @@
 ﻿using AzureAIExamples.Examples.ContentSafityExample;
+using AzureAIExamples.Examples.LanguageService;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -16,16 +17,17 @@ services
     .AddSingleton<IConfiguration>(configuration)
     .ConfigureMyConsoleApp(configuration);
 
-var contentSafetyExample = services
-    .BuildServiceProvider()
-    .GetService<IContentSafetyProgram>();
+var serviceProvider = services.BuildServiceProvider();
 
-if (contentSafetyExample != null)
-    await contentSafetyExample.RunAsync();
+var contentSafetyExample = serviceProvider.GetService<IContentSafetyProgram>();
+var languageDetectionExample = serviceProvider.GetService<ILanguageDetectionProgram>();
+var sentimentAnalysisExample = serviceProvider.GetService<ISentimentAnalysisProgram>();
 
-var languageDetectionExample = services
-    .BuildServiceProvider()
-    .GetService<ILanguageDetectionProgram>();
+//if (contentSafetyExample != null)
+//    await contentSafetyExample.RunAsync();
 
-if (languageDetectionExample != null)
-    await languageDetectionExample.RunAsync();
+//if (languageDetectionExample != null)
+//    await languageDetectionExample.RunAsync();
+
+if (sentimentAnalysisExample != null)
+    await sentimentAnalysisExample.RunAsync();

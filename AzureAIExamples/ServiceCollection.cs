@@ -10,8 +10,8 @@ public static class ServiceCollection
     public static IServiceCollection ConfigureMyConsoleApp(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddContentSafetyClients(configuration);
-        services.AddProgramExamples();
         services.AddLanguageServiceClient(configuration);
+        services.AddProgramExamples();
 
         return services;
     }
@@ -45,6 +45,7 @@ public static class ServiceCollection
             .AddClasses(classes => classes.AssignableTo<IExampleProgram>())
             .AsImplementedInterfaces()
             .WithSingletonLifetime());
+
         return services;
     }
 

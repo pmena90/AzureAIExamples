@@ -2,7 +2,7 @@
 
 namespace AzureAIExamples.Examples.LanguageService
 {
-    public class LanguageDetectionProgram : IExampleProgram
+    public class LanguageDetectionProgram : ILanguageDetectionProgram
     {
         private readonly TextAnalyticsClient _textAnalyticsClient;
 
