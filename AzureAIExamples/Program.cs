@@ -14,8 +14,7 @@ var services = new Microsoft.Extensions.DependencyInjection.ServiceCollection();
 
 services
     .AddSingleton<IConfiguration>(configuration)
-    .AddContentSafetyClients(configuration)
-    .AddProgramExamples();
+    .ConfigureMyConsoleApp(configuration);
 
 var contentSafetyExample = services
     .BuildServiceProvider()
@@ -23,3 +22,10 @@ var contentSafetyExample = services
 
 if (contentSafetyExample != null)
     await contentSafetyExample.RunAsync();
+
+var languageDetectionExample = services
+    .BuildServiceProvider()
+    .GetService<ILanguageDetectionProgram>();
+
+if (languageDetectionExample != null)
+    await languageDetectionExample.RunAsync();
