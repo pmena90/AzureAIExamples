@@ -1,5 +1,6 @@
 ﻿using AzureAIExamples.Examples.ContentSafityExample;
 using AzureAIExamples.Examples.LanguageService;
+using AzureAIExamples.Examples.Speech;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -22,6 +23,7 @@ var serviceProvider = services.BuildServiceProvider();
 var contentSafetyExample = serviceProvider.GetService<IContentSafetyProgram>();
 var languageDetectionExample = serviceProvider.GetService<ILanguageDetectionProgram>();
 var sentimentAnalysisExample = serviceProvider.GetService<ISentimentAnalysisProgram>();
+var speechTranslationExample = serviceProvider.GetService<ISpeechTranslationProgram>();
 
 //if (contentSafetyExample != null)
 //    await contentSafetyExample.RunAsync();
@@ -29,5 +31,8 @@ var sentimentAnalysisExample = serviceProvider.GetService<ISentimentAnalysisProg
 //if (languageDetectionExample != null)
 //    await languageDetectionExample.RunAsync();
 
-if (sentimentAnalysisExample != null)
-    await sentimentAnalysisExample.RunAsync();
+//if (sentimentAnalysisExample != null)
+//    await sentimentAnalysisExample.RunAsync();
+
+if (speechTranslationExample != null)
+    await speechTranslationExample.RunAsync();
